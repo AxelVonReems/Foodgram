@@ -1,16 +1,14 @@
-# Foodgram - продуктовый помощник
+# Foodgram - Recipe Assistant
 
-Foodgram это web-сервис для поиска и публикации рецептов. Пользователям доступен просмотр и создание рецептов,
-подписки на понравившихся авторов, а также добавление рецептов в список избранного с возможностью
-выгрузки списка покупок в формате .txt.
+Foodgram is a web service for finding and sharing recipes. Users can view and create recipes, subscribe to their favorite authors, and add recipes to their favorites list, including a feature to download a shopping list in `.txt` format.
 
-## Данные для входа в админку
+## Admin Credentials
 
-- Почта: admin@example.com
-- Пароль: admin
-- Адрес проекта: http://51.250.23.204
+- Email: admin@example.com
+- Password: admin
+- Project URL: http://51.250.23.204
 
-## Стек технологий
+## Tech Stack
 
 [![Python](https://img.shields.io/badge/-Python-464646?style=flat-square&logo=Python)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/-Django-464646?style=flat-square&logo=Django)](https://www.djangoproject.com/)
@@ -22,122 +20,122 @@ Foodgram это web-сервис для поиска и публикации р�
 [![GitHub%20Actions](https://img.shields.io/badge/-GitHub%20Actions-464646?style=flat-square&logo=GitHub%20actions)](https://github.com/features/actions)
 [![Yandex.Cloud](https://img.shields.io/badge/-Yandex.Cloud-464646?style=flat-square&logo=Yandex.Cloud)](https://cloud.yandex.ru/)
 
-## Как запустить проект на локальной машине
+## How to Run the Project Locally
 
-Клонировать репозиторий и перейти в него в командной строке:
+Clone the repository and navigate to it via the command line:
 
+```text
+[https://github.com/AxelVonReems/foodgram-project-react](https://github.com/AxelVonReems/foodgram-project-react)
 ```
-https://github.com/AxelVonReems/foodgram-project-react
-```
 
-Перейти в папку с проектом
+Navigate to the project folder:
 
-```
+```bash
 cd foodgram-project-react
 ```
 
-Cоздать и активировать виртуальное окружение:
+Create and activate a virtual environment:
 
-```
+```bash
 WIN: python -m venv venv
 MAC: python3 -m venv venv
 ```
 
-```
+```bash
 WIN: source venv/scripts/activate
 MAC: source venv/bin/activate
 ```
 
-Установить зависимости из файла requirements.txt:
+Install dependencies from the `requirements.txt` file:
 
-```
+```bash
 WIN: python -m pip install --upgrade pip
 MAC: python3 -m pip install --upgrade pip
 ```
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
-В файле settings.py заменить базу данных с PostgreSQL на SQLite3 следуя подсказкам в самом файле.
+In the `settings.py` file, replace the PostgreSQL database with SQLite3 by following the inline comments.
 
-Выполнить миграции:
+Apply migrations:
 
-```
+```bash
 WIN: python manage.py makemigrations  
 MAC: python3 manage.py makemigrations
 ```
 
-```
+```bash
 WIN: python manage.py migrate --noinput
 MAC: python3 manage.py migrate --noinput
 ```
 
-Запустить сервер:
+Start the server:
 
-```
+```bash
 WIN: python manage.py runserver
 MAC: python3 manage.py runserver
 ```
 
-Сервис будет доступен по адресу: http://127.0.0.1:8000/
+The service will be available at: http://127.0.0.1:8000/
 
-## Как запустить проект с помощью Docker
+## How to Run the Project Using Docker
 
-Клонировать репозиторий и перейти в него в командной строке.
+Clone the repository and navigate to it via the command line.
 
-Перейти в папку с проектом
+Navigate to the project folder.
 
-Cоздать и активировать виртуальное окружение
+Create and activate a virtual environment.
 
-Установить зависимости из файла requirements.txt
+Install dependencies from the `requirements.txt` file.
 
-В папке infra создать и заполнить по образцу .env-файл:
+In the `infra` folder, create and populate a `.env` file using the following template:
 
+```env
+DB_ENGINE=django.db.backends.postgresql - specifies that we are working with PostgreSQL
+DB_NAME=postgres - database name
+POSTGRES_USER=postgres - login for database connection
+POSTGRES_PASSWORD=postgres - password for database connection
+DB_HOST=db - service (container) name
+DB_PORT=5432 - port for database connection 
+SECRET_KEY=XXXXXXXXXXXXXXXXX - Django project secret key
+DEBUG='False' - debugger setting
 ```
-DB_ENGINE=django.db.backends.postgresql - указываем, что работаем с postgresql
-DB_NAME=postgres - имя базы данных
-POSTGRES_USER=postgres - логин для подключения к базе данных
-POSTGRES_PASSWORD=postgres - пароль для подключения к БД
-DB_HOST=db - название сервиса (контейнера)
-DB_PORT=5432 - порт для подключения к БД 
-SECRET_KEY=ХХХХХХХХХХХХХХХХХ - секретный ключ проекта Django
-DEBUG='False' - настройка дебаггера
-```
 
-Собрать и запустить контейнер с помощью Docker-compose:
+Build and start the container using Docker Compose:
 
-```
+```bash
 docker-compose build
 docker-compose up
 ```
 
-Выполнить миграции через Docker-compose:
+Apply migrations via Docker Compose:
 
-```
+```bash
 docker-compose exec web python manage.py makemigrations
 docker-compose exec web python manage.py migrate --noinput
 ```
 
-Загрузить ингредиенты и теги:
+Load ingredients and tags:
 
-```
+```bash
 docker-compose exec web python manage.py load_ingrs
 docker-compose exec web python manage.py load_tags
 ```
 
-Собрать статику:
+Collect static files:
 
-```
+```bash
 docker-compose exec web python manage.py collectstatic --no-input
 ```
 
-Создать через Docker-compose суперпользователя:
+Create a superuser via Docker Compose:
 
-```
+```bash
 docker-compose exec web python manage.py createsuperuser
 ```
 
-## Автор проекта
+## Author
 
-Алексей Смирнов. GitHub: https://github.com/AxelVonReems/
+Aleksei Smirnov. GitHub: https://github.com/AxelVonReems/
