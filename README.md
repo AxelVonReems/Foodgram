@@ -2,6 +2,8 @@
 
 Foodgram is a web service for finding and sharing recipes. Users can view and create recipes, subscribe to their favorite authors, and add recipes to their favorites list, including a feature to download a shopping list in `.txt` format.
 
+Deployed on Yandex Cloud in 2022. The server is no longer running, and the deploy workflow has been disabled; the workflow file is kept as an example of the CI/CD pipeline.
+
 ## Tech Stack
 
 [![Python](https://img.shields.io/badge/-Python-464646?style=flat-square&logo=Python)](https://www.python.org/)
