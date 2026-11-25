@@ -2,12 +2,6 @@
 
 Foodgram is a web service for finding and sharing recipes. Users can view and create recipes, subscribe to their favorite authors, and add recipes to their favorites list, including a feature to download a shopping list in `.txt` format.
 
-## Admin Credentials
-
-- Email: admin@example.com
-- Password: admin
-- Project URL: http://51.250.23.204
-
 ## Tech Stack
 
 [![Python](https://img.shields.io/badge/-Python-464646?style=flat-square&logo=Python)](https://www.python.org/)
@@ -25,13 +19,13 @@ Foodgram is a web service for finding and sharing recipes. Users can view and cr
 Clone the repository and navigate to it via the command line:
 
 ```text
-[https://github.com/AxelVonReems/foodgram-project-react](https://github.com/AxelVonReems/foodgram-project-react)
+git clone https://github.com/AxelVonReems/Foodgram.git
 ```
 
 Navigate to the project folder:
 
 ```bash
-cd foodgram-project-react
+cd Foodgram
 ```
 
 Create and activate a virtual environment:
